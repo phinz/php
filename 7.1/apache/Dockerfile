@@ -11,7 +11,7 @@ FROM debian:jessie
 RUN curl -o /usr/src/pcre-${PCRE_VERSION}.tar.gz https://ftp.pcre.org/pub/pcre/pcre-${PCRE_VERSION}.tar.gz \
 	&& tar -xzvf /usr/src/pcre-${PCRE_VERSION}.tar.gz && rm /usr/src/pcre-${PCRE_VERSION}.tar.gz \
 	&& cd /usr/src/pcre-${PCRE_VERSION} \
-	&& CFLAGS='' CXXFLAGS='' ./configure --prefix=/usr --enable-pcre16 --enable-pcre32 --enable-jit --enable-cpp --enable-unicode-properties 
+	&& CFLAGS='' CXXFLAGS='' ./configure --prefix=/usr --enable-pcre16 --enable-pcre32 --enable-jit --enable-cpp --enable-unicode-properties \
 	&& make \
 	&& make install \
 	&& make clean
